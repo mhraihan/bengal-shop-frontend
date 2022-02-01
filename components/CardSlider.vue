@@ -1,5 +1,5 @@
 <template>
-  <div class="container pt-20">
+  <div class="container mt-20">
     <div class="flex items-center justify-between card-title">
       <h3 class="mb-6 text-4xl text-gray-300">
         {{ data.title }}

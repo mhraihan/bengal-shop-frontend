@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container mt-20">
     <div class="flex -mx-6 mb-14">
       <div class="w-1/2 px-6">
         <div class="p-12 bg-center bg-cover rounded promo-bg-1">
