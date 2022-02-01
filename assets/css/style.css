@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  @apply text-gray-400;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-medium;
+}
+.container {
+  @apply mx-auto;
+  max-width: 1400px;
+}
+.font-size-32 {
+  font-size: 32px;
+}
+.font-size-22 {
+  font-size: 22px;
+}
+.bs-button {
+  @apply bg-green-300 rounded-full text-white px-6 py-2 inline-block;
+}
+.bs-button-bg {
+  @apply bg-gray-400;
+}
+
+.bs-icon-box {
+  width: 60px;
+  height: 60px;
+}
+.hero-slide .slick-dots {
+  bottom: unset;
+  text-align: right;
+  top: 50%;
+  right: 2%;
+  left: auto;
+  transform: translateY(-50%);
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hero-slide .slick-dots li button:before {
+  @apply text-gray-900 transition-all;
+  font-size: 12px;
+}
+.hero-slide .slick-dots li:hover button:before,
+.hero-slide .slick-dots li:focus button:before,
+.hero-slide .slick-dots li:active button:before,
+.hero-slide .slick-dots li.slick-active button:before {
+  opacity: 1;
+  @apply text-orange-600;
+}
