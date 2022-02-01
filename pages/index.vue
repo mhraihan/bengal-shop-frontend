@@ -3,6 +3,7 @@
     <div class="p-8">
       <Slideshow />
       <CategorySlider />
+      <PromoBanner />
     </div>
   </div>
 </template>
