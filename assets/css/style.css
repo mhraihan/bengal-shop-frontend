@@ -15,14 +15,21 @@ h6 {
   @apply mx-auto;
   max-width: 1400px;
 }
+.font-size-70 {
+  font-size: 70px;
+  line-height: 90px;
+}
 .font-size-32 {
   font-size: 32px;
+  line-height: 42px;
 }
 .font-size-22 {
   font-size: 22px;
+  line-height: 36px;
 }
 .font-size-46 {
   font-size: 46px;
+  line-height: 65px;
 }
 .bs-button {
   @apply bg-green-300 rounded-full text-white px-6 py-2 inline-block;
