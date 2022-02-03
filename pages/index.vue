@@ -3,17 +3,21 @@
     <div class="p-8">
       <Slideshow />
       <CardSlider :data="categories" />
-      <PromoBanner />
-      <CardSlider :data="brands" />
+      <PromoBanner :data="banners" />
+      <ProductCarousel :products="products" />
+      <CardSlider :data="brands" width="w-3/5" height="h-auto" />
+      <PromoBanner :data="banners2" width="w-1/3" padding="p-6" />
     </div>
   </div>
 </template>
 
 <script>
+import products from "~/assets/products.json";
 export default {
   name: "IndexPage",
   data() {
     return {
+      products: [],
       categories: {
         title: "Search by Category",
         class: "bg-orange-700 hover:bg-green-100",
@@ -114,7 +118,49 @@ export default {
           },
         ],
       },
+      banners: [
+        {
+          bg: "promo-bg-1.png",
+          color: "bg-orange-100",
+          title: "Vegetable Collection",
+          subTitle: "Buy 1 Get 2",
+          label: "Order Now",
+          url: "/",
+        },
+        {
+          bg: "promo-bg-2.png",
+          color: "bg-orange-100",
+          title: "Fresh Fruits Collection",
+          subTitle: "Buy 1 Get 1",
+          label: "Order Now",
+          url: "/",
+        },
+      ],
+      banners2: [
+        {
+          img: "fresh-fruit.png",
+          color: "bg-yellow-900",
+          title: "Fruits Collection",
+          url: "/",
+        },
+        {
+          img: "vegetable-collection.png",
+          color: "bg-green-400",
+          title: "Vegetable Collection",
+          url: "/",
+        },
+        {
+          img: "grocery-items.png",
+          color: "bg-yellow-800",
+          title: "Grocery Item",
+          url: "/",
+        },
+      ],
     };
+  },
+  created() {
+    // console.log(products);
+    this.products = products.products;
   },
 };
 </script>

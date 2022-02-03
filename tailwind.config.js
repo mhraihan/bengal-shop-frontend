@@ -2,7 +2,12 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      lineHeight: {
+        "extra-loose": "2.5",
+        12: "3rem",
+      },
+    },
     colors: {
       transparent: "transparent",
       black: "#000",
@@ -13,10 +18,11 @@ module.exports = {
         300: "#333333",
         400: "#4F4F4F",
         500: "#a0aec0",
-        600: "#718096",
+        600: "#BDBDBD",
         700: "#4a5568",
         800: "#E0E0E0",
         900: "#1a202c",
+        1000: "#999999",
       },
       red: {
         100: "#fff5f5",
@@ -48,14 +54,14 @@ module.exports = {
         500: "#ecc94b",
         600: "#d69e2e",
         700: "#b7791f",
-        800: "#975a16",
-        900: "#744210",
+        800: "#FFEBB7",
+        900: "#FFF0DC",
       },
       green: {
         100: "#EBFAEB",
         200: "#c6f6d5",
         300: "#27AE60",
-        400: "#68d391",
+        400: "#DDF1D6",
         500: "#48bb78",
         600: "#38a169",
         700: "#2f855a",

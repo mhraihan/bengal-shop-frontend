@@ -13,7 +13,7 @@ h6 {
 }
 .container {
   @apply mx-auto;
-  max-width: 1400px;
+  /* max-width: 1400px; */
 }
 .font-size-70 {
   font-size: 70px;

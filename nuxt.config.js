@@ -26,6 +26,10 @@ export default {
       src: "~/plugins/vue-slick-carousel",
       ssr: false,
     },
+    {
+      src: "~/plugins/v-click-outside",
+      ssr: false,
+    },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -42,7 +46,13 @@ export default {
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    loaders: {
+      scss: {
+        implementation: require("sass"),
+      },
+    },
+  },
   fontawesome: {
     icons: {
       solid: true,

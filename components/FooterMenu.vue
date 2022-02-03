@@ -1,8 +1,8 @@
 <template>
   <div class="w-1/5 pl-6">
-    <h3 class="text-2xl mb-6">{{ title }}</h3>
+    <h3 class="mb-6 text-2xl">{{ title }}</h3>
     <ul class="leading-loose">
-      <li v-for="link in links" :key="link">
+      <li v-for="(link, index) in links" :key="index">
         <nuxt-link :to="link.url">{{ link.title }}</nuxt-link>
       </li>
     </ul>

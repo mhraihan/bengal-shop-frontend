@@ -1,20 +1,13 @@
 <template>
   <div>
     <div class="container">
-      <div class="flex flex-wrap justify-between items-center py-6">
+      <div class="flex flex-wrap items-center justify-between py-6">
         <Logo />
         <div class="w-96">
           <div
-            class="
-              border border-gray-100
-              px-1
-              py-1
-              flex
-              rounded-full
-              items-center
-            "
+            class="flex items-center px-1 py-1 border border-gray-100 rounded-full "
           >
-            <div class="miw-w-max px-3">
+            <div class="px-3 miw-w-max">
               <img
                 src="~/assets/img/search.png"
                 loading="lazy"
@@ -29,23 +22,16 @@
             />
             <button
               type="submit"
-              class="bg-gray-400 px-6 py-2 bs-button-bg rounded-full text-white"
+              class="px-6 py-2 text-white bg-gray-400 rounded-full bs-button-bg"
             >
               Search
             </button>
           </div>
         </div>
-        <div class="min-w-max flex items-center">
+        <div class="flex items-center min-w-max">
           <nuxt-link to="/">
             <span
-              class="
-                bs-icon-box
-                rounded-full
-                hover:bg-gray-200
-                flex
-                items-center
-                justify-center
-              "
+              class="flex items-center justify-center rounded-full  bs-icon-box hover:bg-gray-200"
             >
               <img
                 src="~/assets/img/heart.png"
@@ -57,14 +43,7 @@
           </nuxt-link>
           <nuxt-link to="/" class="relative mx-4">
             <span
-              class="
-                bs-icon-box
-                rounded-full
-                hover:bg-gray-200
-                flex
-                items-center
-                justify-center
-              "
+              class="flex items-center justify-center rounded-full  bs-icon-box hover:bg-gray-200"
             >
               <img
                 src="~/assets/img/cart.png"
@@ -74,32 +53,13 @@
               />
             </span>
             <span
-              class="
-                absolute
-                bg-orange-600
-                w-4
-                h-4
-                top-0
-                right-0
-                rounded-full
-                text-xs text-white
-                flex
-                justify-center
-                items-center
-              "
+              class="absolute top-0 right-0 flex items-center justify-center w-4 h-4 text-xs text-white bg-orange-600 rounded-full "
               >0</span
             >
           </nuxt-link>
           <nuxt-link to="/" class="flex items-center">
             <span
-              class="
-                bs-icon-box
-                rounded-full
-                hover:bg-gray-200
-                flex
-                items-center
-                justify-center
-              "
+              class="flex items-center justify-center rounded-full  bs-icon-box hover:bg-gray-200"
             >
               <img
                 src="~/assets/img/account.png"
@@ -114,17 +74,14 @@
       </div>
 
       <div class="flex items-center">
-        <div class="w-96">
+        <div
+          v-click-outside="onClickOutside"
+          class="relative w-96 header-slide-menu"
+        >
           <div
-            class="
-              bg-green-300
-              rounded-full
-              px-4
-              py-2
-              cursor-pointer
-              flex
-              items-center
-            "
+            @click="toogleMenu"
+            :class="menuOpen ? 'menu-open' : ''"
+            class="relative z-20 flex items-center px-4 py-2 bg-green-300 rounded-full cursor-pointer "
           >
             <div class="min-w-max">
               <img
@@ -135,7 +92,7 @@
               />
             </div>
             <div class="w-full text-center text-white">All Categories</div>
-            <div class="min-w-max">
+            <div class="min-w-max menu-down-icon">
               <img
                 src="~/assets/img/chevron-down.png"
                 loading="lazy"
@@ -143,6 +100,25 @@
                 srcset=""
               />
             </div>
+          </div>
+          <div
+            class="absolute z-10 w-full pt-8 pb-1 -mt-5 bg-green-300  rounded-b-xl"
+            v-if="menuOpen"
+          >
+            <ul class="vega-menu">
+              <li
+                class="menu-link"
+                v-for="(menu, index) in slideMenu"
+                :key="index"
+              >
+                <nuxt-link
+                  :to="menu.url"
+                  class="block px-8 py-2 text-white  link-title hover:text-black hover:bg-green-200"
+                >
+                  <div class="alink">{{ menu.title }}</div>
+                </nuxt-link>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="w-full">
@@ -167,7 +143,7 @@
             </li>
           </ul>
         </div>
-        <nuxt-link to="/" class="min-w-max text-orange-600 flex items-center">
+        <nuxt-link to="/" class="flex items-center text-orange-600 min-w-max">
           <img
             src="~/assets/img/percentage.png"
             loading="lazy"
@@ -180,3 +156,68 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      menuOpen: false,
+      slideMenu: [
+        {
+          title: "Fresh Vegetable",
+          url: "/",
+        },
+        {
+          title: "Fresh Fruits",
+          url: "/",
+        },
+        {
+          title: "Cow Milk",
+          url: "/",
+        },
+        {
+          title: "Fresh Meat",
+          url: "/",
+        },
+        {
+          title: "Green Dhaniya",
+          url: "/",
+        },
+        {
+          title: "Haldi Powder",
+          url: "/",
+        },
+        {
+          title: "Mag Almoner",
+          url: "/",
+        },
+        {
+          title: "Ice Cream",
+          url: "/",
+        },
+        {
+          title: "Sea & Fish",
+          url: "/",
+        },
+      ],
+    };
+  },
+  methods: {
+    toogleMenu() {
+      this.menuOpen = !this.menuOpen;
+    },
+    onClickOutside(event) {
+      this.menuOpen = false;
+      console.log("Clicked outside. Event: ", event);
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.menu-down-icon {
+  .menu-open & {
+    transform: rotate(180deg);
+  }
+  transition: 0.25s;
+}
+</style>

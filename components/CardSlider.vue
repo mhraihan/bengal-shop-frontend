@@ -1,24 +1,6 @@
 <template>
   <div class="container mt-20">
-    <div class="flex items-center justify-between card-title">
-      <h3 class="mb-6 text-4xl text-gray-300">
-        {{ data.title }}
-      </h3>
-      <div class="card-arrows min-w-max">
-        <button
-          @click="prev"
-          class="w-8 h-8 p-1 mr-4 transition-all rounded-full  arrow-left hover:bg-green-500 hover:text-white"
-        >
-          <font-awesome-icon class="" :icon="['fas', 'chevron-left']" />
-        </button>
-        <button
-          @click="next"
-          class="w-8 h-8 p-1 transition-all rounded-full  arrow-right hover:bg-green-500 hover:text-white"
-        >
-          <font-awesome-icon class="" :icon="['fas', 'chevron-right']" />
-        </button>
-      </div>
-    </div>
+    <SliderHeader :title="data.title" :next="next" :prev="prev" />
     <div class="flex items-center mb-10">
       <div style="height: 3px" class="bg-green-500 w-32 h-0.5"></div>
       <div class="bg-gray-800 w-full h-0.5"></div>
@@ -35,7 +17,7 @@
         :class="data.class"
       >
         <div class="flex flex-col items-center justify-center h-24 mb-4">
-          <img class="h-full" :src="src(card.img)" alt="" />
+          <img :class="`${height} ${width}`" :src="src(card.img)" alt="" />
         </div>
         <h3 v-if="card.title" class="mb-3 text-xl">{{ card.title }}</h3>
       </div>
@@ -48,6 +30,14 @@ export default {
     data: {
       type: Object,
       required: true,
+    },
+    width: {
+      type: String,
+      default: "w-auto",
+    },
+    height: {
+      type: String,
+      default: "h-full",
     },
   },
   data() {
