@@ -160,7 +160,7 @@ export default {
   },
   created() {
     // console.log(products);
-    this.products = products.products;
+    this.products = products.products.slice(0, 8);
   },
 };
 </script>

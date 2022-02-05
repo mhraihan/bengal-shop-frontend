@@ -123,23 +123,10 @@
         </div>
         <div class="w-full">
           <ul class="flex justify-center">
-            <li>
-              <nuxt-link to="/" class="p-4">Home</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/" class="p-4">Categories</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/" class="p-4">About</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/" class="p-4">Contact</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/" class="p-4">FAQs</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/" class="p-4">Offers</nuxt-link>
+            <li v-for="(menu, index) in mainMenu" :key="index">
+              <nuxt-link :to="menu.url" class="p-4 hover:text-green-300">{{
+                menu.title
+              }}</nuxt-link>
             </li>
           </ul>
         </div>
@@ -161,42 +148,91 @@ export default {
   data() {
     return {
       menuOpen: false,
+      mainMenu: [
+        {
+          title: "Home",
+          url: "/",
+        },
+        {
+          title: "Categories",
+          url: "/category",
+        },
+        {
+          title: "About",
+          url: "/about",
+        },
+        {
+          title: "Contact",
+          url: "/",
+        },
+        {
+          title: "FAQs",
+          url: "/",
+        },
+        {
+          title: "Offers",
+          url: "/",
+        },
+      ],
       slideMenu: [
         {
-          title: "Fresh Vegetable",
+          title: "Vegetables",
           url: "/",
+          icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/vegetables.png?v=1644038622",
         },
         {
-          title: "Fresh Fruits",
+          title: "Fruits",
           url: "/",
+          icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/fruits.png?v=1644038622",
+          label2: [
+            {
+              title: "Green Fruits",
+              url: "/",
+              label3: [
+                {
+                  title: "Fresh Fruits",
+                  url: "/",
+                },
+                {
+                  title: "Frozen Fruits",
+                  url: "/",
+                },
+              ],
+            },
+            {
+              title: "Yellow Fruits",
+              url: "/",
+            },
+            {
+              title: "Dry Fruits",
+              url: "/",
+            },
+          ],
         },
         {
-          title: "Cow Milk",
+          title: "Groceries",
           url: "/",
+          icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/groceries.png?v=1644038622",
         },
         {
-          title: "Fresh Meat",
+          title: "Meat",
           url: "/",
+          icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/meat.png?v=1644038622",
         },
         {
-          title: "Green Dhaniya",
+          title: "Fish",
           url: "/",
+          icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/fish.png?v=1644038622",
         },
         {
-          title: "Haldi Powder",
+          title: "Bevarage",
           url: "/",
+          icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/bevarage.png?v=1644038622",
         },
         {
-          title: "Mag Almoner",
+          title: "Dry Food",
           url: "/",
-        },
-        {
-          title: "Ice Cream",
-          url: "/",
-        },
-        {
-          title: "Sea & Fish",
-          url: "/",
+          icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/dry-foodood.png?v=1644038622",
         },
       ],
     };
