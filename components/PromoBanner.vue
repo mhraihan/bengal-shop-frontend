@@ -5,11 +5,11 @@
         v-for="(banner, index) in data"
         :key="index"
         :class="width"
-        class="px-6"
+        class="px-6 flex"
       >
         <div
           :class="`${banner.color} ${padding}`"
-          class="flex items-center justify-between bg-center bg-cover rounded  promo-bg-1"
+          class="flex items-center justify-between bg-center bg-cover rounded w-full  promo-bg-1"
           :style="style(banner.bg)"
         >
           <div class="w-1/2">
