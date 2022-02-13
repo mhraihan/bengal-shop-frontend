@@ -1,5 +1,8 @@
 <template>
   <li class="accordion__item">
+    <div class="accordion__item--link">
+      <slot name="accordion-link"></slot>
+    </div>
     <div
       class="accordion__trigger"
       :class="{ accordion__trigger_active: visible }"
@@ -65,7 +68,7 @@ export default {
 <style lang="scss" scoped>
 .accordion__item {
   cursor: pointer;
-  padding: 10px 20px 10px 40px;
+  padding: 10px;
   border-bottom: 1px solid #ebebeb;
   position: relative;
 }

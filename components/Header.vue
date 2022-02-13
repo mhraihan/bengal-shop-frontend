@@ -177,12 +177,12 @@ export default {
       slideMenu: [
         {
           title: "Vegetables",
-          url: "/",
+          url: "/category/vegetables",
           icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/vegetables.png?v=1644038622",
         },
         {
           title: "Fruits",
-          url: "/",
+          url: "/category/fruits",
           icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/fruits.png?v=1644038622",
           label2: [
             {
