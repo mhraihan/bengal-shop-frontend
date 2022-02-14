@@ -6,7 +6,12 @@
 
 <script>
 export default {
-  props: {},
+  props: {
+    activeState: {
+      type: Boolean,
+      default: null,
+    },
+  },
   data() {
     return {
       Accordion: {
@@ -17,6 +22,9 @@ export default {
   },
   provide() {
     return { Accordion: this.Accordion };
+  },
+  created() {
+    this.Accordion.active = this.activeState;
   },
 };
 </script>
