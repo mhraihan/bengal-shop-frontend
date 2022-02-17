@@ -1,8 +1,6 @@
 <template>
   <div ref="cardCarousel" class="flex items-center justify-between card-title">
-    <h3 class="mb-6 text-4xl text-gray-300">
-      {{ title }}
-    </h3>
+    <Title :title="title" />
     <div class="card-arrows min-w-max">
       <button
         @click="prev"

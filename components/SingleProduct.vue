@@ -36,7 +36,7 @@
                 -
               </button>
               <span
-                class="w-12 h-12 mx-6 border border-white rounded-full  leading-12"
+                class="w-12 h-12 mx-6 text-center border border-white rounded-full  leading-12"
                 >0</span
               >
               <button

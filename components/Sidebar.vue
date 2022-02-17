@@ -1,101 +1,103 @@
 <template>
-  <div class="w-1/4 mr-6 border border-green-100">
-    <accordion :activeState="false">
-      <accordion-item :accordion__content="'py-6 px-4'">
-        <template slot="accordion-trigger">
-          <div class="w-full p-4 bg-green-100">
-            <h3
-              class="flex items-center justify-between w-full  hover:text-green-500"
-            >
-              <div class="flex items-center min-w-max">
-                <span class="ml-2">Categories</span>
-              </div>
-              <font-awesome-icon
-                class="hover:text-green-500"
-                :icon="['fas', 'fa-chevron-right']"
-              />
-            </h3>
-          </div>
-        </template>
-        <template slot="accordion-content">
-          <accordion>
-            <accordion-item v-for="(menu, index) in slideMenu" :key="index">
-              <template slot="accordion-link" v-if="!menu.label">
-                <nuxt-link
-                  :to="menu.url"
-                  class="flex items-center min-w-full hover:text-green-500"
-                >
-                  <img v-if="menu.icon" :src="menu.icon" alt="" />
-                  <span class="ml-2">{{ menu.title }}</span>
-                </nuxt-link>
-              </template>
-              <template v-if="menu.label" slot="accordion-trigger">
-                <h3
-                  class="flex items-center justify-between w-full font-normal  hover:text-green-500"
-                >
-                  <div class="flex items-center min-w-max">
+  <div class="w-1/4 mr-6">
+    <div class="border border-green-100">
+      <accordion :activeState="false">
+        <accordion-item :accordion__content="'py-6 px-4'">
+          <template slot="accordion-trigger">
+            <div class="w-full p-4 bg-green-100">
+              <h3
+                class="flex items-center justify-between w-full  hover:text-green-500"
+              >
+                <div class="flex items-center min-w-max">
+                  <span class="ml-2">Categories</span>
+                </div>
+                <font-awesome-icon
+                  class="hover:text-green-500"
+                  :icon="['fas', 'fa-chevron-right']"
+                />
+              </h3>
+            </div>
+          </template>
+          <template slot="accordion-content">
+            <accordion>
+              <accordion-item v-for="(menu, index) in slideMenu" :key="index">
+                <template slot="accordion-link" v-if="!menu.label">
+                  <nuxt-link
+                    :to="menu.url"
+                    class="flex items-center min-w-full hover:text-green-500"
+                  >
                     <img v-if="menu.icon" :src="menu.icon" alt="" />
                     <span class="ml-2">{{ menu.title }}</span>
-                  </div>
-                  <font-awesome-icon
-                    v-if="menu.label"
-                    class="hover:text-green-500"
-                    :icon="['fas', 'fa-chevron-right']"
-                  />
-                </h3>
-              </template>
-
-              <template v-if="menu.label" slot="accordion-content">
-                <accordion>
-                  <accordion-item
-                    v-for="(child, index) in menu.label"
-                    :key="index"
+                  </nuxt-link>
+                </template>
+                <template v-if="menu.label" slot="accordion-trigger">
+                  <h3
+                    class="flex items-center justify-between w-full font-normal  hover:text-green-500"
                   >
-                    <template slot="accordion-link" v-if="!child.label">
-                      <nuxt-link
-                        :to="child.url"
-                        class="flex items-center min-w-full  hover:text-green-500"
-                      >
-                        <span class="ml-2">{{ child.title }}</span>
-                      </nuxt-link>
-                    </template>
-                    <template v-if="child.label" slot="accordion-trigger">
-                      <h3
-                        class="flex items-center justify-between w-full font-normal  hover:text-green-500"
-                      >
-                        <div class="flex items-center min-w-max">
+                    <div class="flex items-center min-w-max">
+                      <img v-if="menu.icon" :src="menu.icon" alt="" />
+                      <span class="ml-2">{{ menu.title }}</span>
+                    </div>
+                    <font-awesome-icon
+                      v-if="menu.label"
+                      class="hover:text-green-500"
+                      :icon="['fas', 'fa-chevron-right']"
+                    />
+                  </h3>
+                </template>
+
+                <template v-if="menu.label" slot="accordion-content">
+                  <accordion>
+                    <accordion-item
+                      v-for="(child, index) in menu.label"
+                      :key="index"
+                    >
+                      <template slot="accordion-link" v-if="!child.label">
+                        <nuxt-link
+                          :to="child.url"
+                          class="flex items-center min-w-full  hover:text-green-500"
+                        >
                           <span class="ml-2">{{ child.title }}</span>
-                        </div>
-                        <font-awesome-icon
-                          v-if="child.label"
-                          class="hover:text-green-500"
-                          :icon="['fas', 'fa-chevron-right']"
-                        />
-                      </h3>
-                    </template>
-                    <template v-if="child.label" slot="accordion-content">
-                      <accordion-item
-                        v-for="(grandChild, index) in child.label"
-                        :key="index"
-                      >
-                        <template slot="accordion-link">
-                          <nuxt-link
-                            :to="grandChild.url"
-                            class="flex items-center min-w-full  hover:text-green-500"
-                          >
-                            <span class="ml-2">{{ grandChild.title }}</span>
-                          </nuxt-link>
-                        </template>
-                      </accordion-item>
-                    </template>
-                  </accordion-item>
-                </accordion>
-              </template>
-            </accordion-item>
-          </accordion>
-        </template>
-      </accordion-item>
-    </accordion>
+                        </nuxt-link>
+                      </template>
+                      <template v-if="child.label" slot="accordion-trigger">
+                        <h3
+                          class="flex items-center justify-between w-full font-normal  hover:text-green-500"
+                        >
+                          <div class="flex items-center min-w-max">
+                            <span class="ml-2">{{ child.title }}</span>
+                          </div>
+                          <font-awesome-icon
+                            v-if="child.label"
+                            class="hover:text-green-500"
+                            :icon="['fas', 'fa-chevron-right']"
+                          />
+                        </h3>
+                      </template>
+                      <template v-if="child.label" slot="accordion-content">
+                        <accordion-item
+                          v-for="(grandChild, index) in child.label"
+                          :key="index"
+                        >
+                          <template slot="accordion-link">
+                            <nuxt-link
+                              :to="grandChild.url"
+                              class="flex items-center min-w-full  hover:text-green-500"
+                            >
+                              <span class="ml-2">{{ grandChild.title }}</span>
+                            </nuxt-link>
+                          </template>
+                        </accordion-item>
+                      </template>
+                    </accordion-item>
+                  </accordion>
+                </template>
+              </accordion-item>
+            </accordion>
+          </template>
+        </accordion-item>
+      </accordion>
+    </div>
   </div>
 </template>
 

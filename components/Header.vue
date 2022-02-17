@@ -254,7 +254,6 @@ export default {
     },
     onClickOutside(event) {
       this.menuOpen = false;
-      console.log("Clicked outside. Event: ", event);
     },
   },
 };
