@@ -6,7 +6,13 @@
           <template slot="accordion-trigger">
             <div class="w-full p-4 bg-green-100">
               <h3
-                class="flex items-center justify-between w-full  hover:text-green-500"
+                class="
+                  flex
+                  items-center
+                  justify-between
+                  w-full
+                  hover:text-green-500
+                "
               >
                 <div class="flex items-center min-w-max">
                   <span class="ml-2">Categories</span>
@@ -32,7 +38,14 @@
                 </template>
                 <template v-if="menu.label" slot="accordion-trigger">
                   <h3
-                    class="flex items-center justify-between w-full font-normal  hover:text-green-500"
+                    class="
+                      flex
+                      items-center
+                      justify-between
+                      w-full
+                      font-normal
+                      hover:text-green-500
+                    "
                   >
                     <div class="flex items-center min-w-max">
                       <img v-if="menu.icon" :src="menu.icon" alt="" />
@@ -55,14 +68,26 @@
                       <template slot="accordion-link" v-if="!child.label">
                         <nuxt-link
                           :to="child.url"
-                          class="flex items-center min-w-full  hover:text-green-500"
+                          class="
+                            flex
+                            items-center
+                            min-w-full
+                            hover:text-green-500
+                          "
                         >
                           <span class="ml-2">{{ child.title }}</span>
                         </nuxt-link>
                       </template>
                       <template v-if="child.label" slot="accordion-trigger">
                         <h3
-                          class="flex items-center justify-between w-full font-normal  hover:text-green-500"
+                          class="
+                            flex
+                            items-center
+                            justify-between
+                            w-full
+                            font-normal
+                            hover:text-green-500
+                          "
                         >
                           <div class="flex items-center min-w-max">
                             <span class="ml-2">{{ child.title }}</span>
@@ -82,7 +107,12 @@
                           <template slot="accordion-link">
                             <nuxt-link
                               :to="grandChild.url"
-                              class="flex items-center min-w-full  hover:text-green-500"
+                              class="
+                                flex
+                                items-center
+                                min-w-full
+                                hover:text-green-500
+                              "
                             >
                               <span class="ml-2">{{ grandChild.title }}</span>
                             </nuxt-link>
@@ -120,51 +150,51 @@ export default {
           label: [
             {
               title: "Green Fruits",
-              url: "/",
+              url: "/category/green-fruits",
               label: [
                 {
                   title: "Fresh Fruits",
-                  url: "/",
+                  url: "/category/fresh-fruits",
                 },
                 {
                   title: "Frozen Fruits",
-                  url: "/",
+                  url: "/category/frozen-fruits",
                 },
               ],
             },
             {
               title: "Yellow Fruits",
-              url: "/",
+              url: "/category/yellow-fruits",
             },
             {
               title: "Dry Fruits",
-              url: "/",
+              url: "/category/dry-fruits",
             },
           ],
         },
         {
           title: "Groceries",
-          url: "/",
+          url: "/category/groceries",
           icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/groceries.png?v=1644038622",
         },
         {
           title: "Meat",
-          url: "/",
+          url: "/category/meat",
           icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/meat.png?v=1644038622",
         },
         {
           title: "Fish",
-          url: "/",
+          url: "/category/fish",
           icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/fish.png?v=1644038622",
         },
         {
           title: "Bevarage",
-          url: "/",
+          url: "/category/bevarage",
           icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/bevarage.png?v=1644038622",
         },
         {
           title: "Dry Food",
-          url: "/",
+          url: "/category/dry-food",
           icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/dry-foodood.png?v=1644038622",
         },
       ],

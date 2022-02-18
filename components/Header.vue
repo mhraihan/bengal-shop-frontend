@@ -10,7 +10,16 @@
           <div class="flex items-center justify-between">
             <div class="flex w-full pl-10">
               <div
-                class="flex items-center justify-center w-3/4 px-1 py-1 border border-gray-100 rounded-full "
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  w-3/4
+                  px-1
+                  py-1
+                  border border-gray-100
+                  rounded-full
+                "
               >
                 <div class="px-3 miw-w-max">
                   <img
@@ -27,7 +36,14 @@
                 />
                 <button
                   type="submit"
-                  class="px-6 py-2 text-white bg-gray-400 rounded-full  bs-button-bg"
+                  class="
+                    px-6
+                    py-2
+                    text-white
+                    bg-gray-400
+                    rounded-full
+                    bs-button-bg
+                  "
                 >
                   Search
                 </button>
@@ -36,7 +52,14 @@
             <div class="flex items-center min-w-max">
               <nuxt-link to="/">
                 <span
-                  class="flex items-center justify-center rounded-full  bs-icon-box hover:bg-gray-200"
+                  class="
+                    flex
+                    items-center
+                    justify-center
+                    rounded-full
+                    bs-icon-box
+                    hover:bg-gray-200
+                  "
                 >
                   <img
                     src="~/assets/img/heart.png"
@@ -48,7 +71,14 @@
               </nuxt-link>
               <nuxt-link to="/" class="relative mx-4">
                 <span
-                  class="flex items-center justify-center rounded-full  bs-icon-box hover:bg-gray-200"
+                  class="
+                    flex
+                    items-center
+                    justify-center
+                    rounded-full
+                    bs-icon-box
+                    hover:bg-gray-200
+                  "
                 >
                   <img
                     src="~/assets/img/cart.png"
@@ -58,13 +88,32 @@
                   />
                 </span>
                 <span
-                  class="absolute top-0 right-0 flex items-center justify-center w-4 h-4 text-xs text-white bg-orange-600 rounded-full "
+                  class="
+                    absolute
+                    top-0
+                    right-0
+                    flex
+                    items-center
+                    justify-center
+                    w-4
+                    h-4
+                    text-xs text-white
+                    bg-orange-600
+                    rounded-full
+                  "
                   >0</span
                 >
               </nuxt-link>
               <nuxt-link to="/" class="flex items-center">
                 <span
-                  class="flex items-center justify-center rounded-full  bs-icon-box hover:bg-gray-200"
+                  class="
+                    flex
+                    items-center
+                    justify-center
+                    rounded-full
+                    bs-icon-box
+                    hover:bg-gray-200
+                  "
                 >
                   <img
                     src="~/assets/img/account.png"
@@ -88,7 +137,17 @@
           <div
             @click="toogleMenu"
             :class="menuOpen ? 'menu-open' : ''"
-            class="relative z-20 flex items-center px-4 py-2 bg-green-300 rounded-full cursor-pointer "
+            class="
+              relative
+              z-20
+              flex
+              items-center
+              px-4
+              py-2
+              bg-green-300
+              rounded-full
+              cursor-pointer
+            "
           >
             <div class="min-w-max">
               <img
@@ -109,7 +168,16 @@
             </div>
           </div>
           <div
-            class="absolute z-10 w-full pt-8 pb-1 -mt-5 bg-green-300  rounded-b-xl"
+            class="
+              absolute
+              z-10
+              w-full
+              pt-8
+              pb-1
+              -mt-5
+              bg-green-300
+              rounded-b-xl
+            "
             v-if="menuOpen"
           >
             <ul class="vega-menu">
@@ -120,7 +188,14 @@
               >
                 <nuxt-link
                   :to="menu.url"
-                  class="block px-8 py-2 text-white  link-title hover:text-black hover:bg-green-200"
+                  class="
+                    block
+                    px-8
+                    py-2
+                    text-white
+                    link-title
+                    hover:text-black hover:bg-green-200
+                  "
                 >
                   <div class="alink">{{ menu.title }}</div>
                 </nuxt-link>
@@ -195,54 +270,54 @@ export default {
           title: "Fruits",
           url: "/category/fruits",
           icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/fruits.png?v=1644038622",
-          label2: [
+          label: [
             {
               title: "Green Fruits",
-              url: "/",
-              label3: [
+              url: "/category/green-fruits",
+              label: [
                 {
                   title: "Fresh Fruits",
-                  url: "/",
+                  url: "/category/fresh-fruits",
                 },
                 {
                   title: "Frozen Fruits",
-                  url: "/",
+                  url: "/category/frozen-fruits",
                 },
               ],
             },
             {
               title: "Yellow Fruits",
-              url: "/",
+              url: "/category/yellow-fruits",
             },
             {
               title: "Dry Fruits",
-              url: "/",
+              url: "/category/dry-fruits",
             },
           ],
         },
         {
           title: "Groceries",
-          url: "/",
+          url: "/category/groceries",
           icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/groceries.png?v=1644038622",
         },
         {
           title: "Meat",
-          url: "/",
+          url: "/category/meat",
           icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/meat.png?v=1644038622",
         },
         {
           title: "Fish",
-          url: "/",
+          url: "/category/fish",
           icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/fish.png?v=1644038622",
         },
         {
           title: "Bevarage",
-          url: "/",
+          url: "/category/bevarage",
           icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/bevarage.png?v=1644038622",
         },
         {
           title: "Dry Food",
-          url: "/",
+          url: "/category/dry-food",
           icon: "https://cdn.shopify.com/s/files/1/0530/6849/7053/files/dry-foodood.png?v=1644038622",
         },
       ],
