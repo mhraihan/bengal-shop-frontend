@@ -15,6 +15,11 @@
 import products from "~/assets/products.json";
 export default {
   name: "IndexPage",
+  head() {
+    return {
+      title: "Home",
+    };
+  },
   data() {
     return {
       products: [],

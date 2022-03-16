@@ -1,7 +1,15 @@
 <template>
   <div class="single-bs-product">
     <div
-      class="flex flex-col items-center justify-center p-4 text-gray-300 cursor-pointer  card-carousel-item"
+      class="
+        flex flex-col
+        items-center
+        justify-center
+        p-4
+        text-gray-300
+        cursor-pointer
+        card-carousel-item
+      "
     >
       <div class="relative mb-4 h-50">
         <div class="flex flex-col items-center justify-center h-full p-0">
@@ -12,11 +20,38 @@
           />
         </div>
         <div
-          class="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full  product-img-hover"
+          class="
+            absolute
+            top-0
+            left-0
+            flex flex-col
+            items-center
+            justify-center
+            w-full
+            h-full
+            product-img-hover
+          "
         >
-          <div class="w-full h-full bg-black opacity-60"></div>
+          <div
+            @click.prevent="open(product)"
+            class="w-full h-full bg-black opacity-60"
+          ></div>
           <button
-            class="absolute bottom-0 left-0 z-20 flex items-center justify-center w-full p-2 bg-gray-100 rounded-t-lg  text-gray-1000"
+            @click.prevent="open(product)"
+            class="
+              absolute
+              bottom-0
+              left-0
+              z-20
+              flex
+              items-center
+              justify-center
+              w-full
+              p-2
+              bg-gray-100
+              rounded-t-lg
+              text-gray-1000
+            "
           >
             <span>Details</span>
             <font-awesome-icon
@@ -25,26 +60,18 @@
             />
           </button>
           <div
-            class="absolute z-10 flex items-center justify-center w-full h-full"
+            class="
+              absolute
+              z-10
+              flex
+              items-center
+              justify-center
+              w-full
+              h-full
+              mb-8
+            "
           >
-            <div
-              class="flex items-center justify-center mb-8 text-4xl text-white"
-            >
-              <button
-                class="w-12 h-12 border border-white rounded-full leading-12"
-              >
-                -
-              </button>
-              <span
-                class="w-12 h-12 mx-6 text-center border border-white rounded-full  leading-12"
-                >0</span
-              >
-              <button
-                class="w-12 h-12 border border-white rounded-full leading-12"
-              >
-                +
-              </button>
-            </div>
+            <LazyInput />
           </div>
         </div>
       </div>
@@ -66,6 +93,8 @@
   </div>
 </template>
 <script>
+import QuickView from "~/components/quickview";
+
 export default {
   props: {
     product: {
@@ -87,6 +116,19 @@ export default {
   methods: {
     src(img) {
       return img;
+    },
+    open(product) {
+      this.$modal.show(
+        QuickView,
+        {
+          text: "This text is passed as a property lol",
+          product,
+        },
+        {
+          width: 1000,
+          height: "auto",
+        }
+      );
     },
   },
 };

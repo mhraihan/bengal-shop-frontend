@@ -10,7 +10,7 @@
       v-bind="settings"
       ref="cardCarousel"
     >
-      <SingleProduct
+      <LazyProduct
         v-for="product in products"
         :key="product.id"
         :product="product"

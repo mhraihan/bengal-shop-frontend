@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "bengal-shop-frontend",
+    titleTemplate: "Bengal Shop: %s",
     htmlAttrs: {
       lang: "en",
     },
@@ -30,10 +30,13 @@ export default {
       src: "~/plugins/v-click-outside",
       ssr: false,
     },
+    "~plugins/vue-js-modal.js",
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: {
+    dirs: ["~/components", "~/components/product"],
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -43,9 +46,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-
-  ],
+  modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

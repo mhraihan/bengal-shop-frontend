@@ -20,6 +20,11 @@
 import products from "~/assets/products.json";
 export default {
   name: "CategoryPage",
+  head() {
+    return {
+      title: this.title,
+    };
+  },
   data() {
     return {
       title: "All Collections",
